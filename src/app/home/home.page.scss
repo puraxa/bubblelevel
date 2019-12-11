@@ -1,1 +1,59 @@
-
+.con {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-rows: 80vh;
+}
+.container {
+    width: 90%;
+    display: grid;
+    grid-template-rows: 40px;
+    margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+    background: linear-gradient(180deg, rgba(8,94,0,1) 0%, rgba(177,228,122,1) 100%);
+    border: 0.5px solid black;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.container-circle {
+    width: 300px;
+    height: 300px;
+    grid-template-rows: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.bubble-container {
+    width: 40px;
+    height: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.bubble-container-circle {
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+.bubble {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid black;
+    border-radius: 50%;
+    transition: all 0.3s;
+    box-shadow: 1px black;
+    overflow: hidden;
+}
+.bubble-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.2;
+}
+ion-content {
+    --background: linear-gradient(180deg, rgba(226,231,225,1) 0%, rgba(91,91,91,1) 100%);
+}
