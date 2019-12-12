@@ -11,7 +11,7 @@ export class BubbleLevelDirective {
   constructor(private el: ElementRef, private renderer: Renderer2, deviceMotion: DeviceMotion, private screenOrientation: ScreenOrientation, private platform: Platform) {  
     platform.ready().then(() => {
       deviceMotion.watchAcceleration({frequency: 150}).subscribe(response => {
-        if(response.z > 6){
+        if(response.z > 6 && screenOrientation.type.indexOf('landscape')){
           renderer.setStyle(el.nativeElement, 'transform', `translate(${response.x * 40}px,${response.y*-40}px)`);
           if(Math.abs(response.x * 40) + Math.abs(response.y * 40) > 190){
             renderer.setStyle(el.nativeElement,'display','none');
