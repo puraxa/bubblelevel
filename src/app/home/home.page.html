@@ -1,14 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Bubble Level
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
   <div class="ion-padding">
     <div class="con">
+      <div *ngIf="screenOrientation.type.indexOf('portrait') && !flat">
+        <p>{{x}}&#176;</p>
+      </div>
+      <div *ngIf="screenOrientation.type.indexOf('landscape') && !flat">
+        <p>{{y}}&#176;</p>
+      </div>
+      <div *ngIf="flat">
+        <p>X: {{x}}&#176;</p>
+        <p>Y: {{y}}&#176;</p>
+      </div>
       <div [ngClass]="{'container':true, 'container-circle':flat}">
         <div [ngClass]="{'bubble-container': true, 'bubble-container-circle': flat}">
           <div class="bubble" appBubbleLevel>

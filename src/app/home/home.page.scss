@@ -2,7 +2,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 80vh;
+    grid-template-rows: 20vh 80vh;
 }
 .container {
     width: 90%;
@@ -21,7 +21,6 @@
     height: 300px;
     grid-template-rows: 300px;
     border-radius: 50%;
-    overflow: hidden;
 }
 .bubble-container {
     width: 40px;
@@ -56,4 +55,7 @@
 }
 ion-content {
     --background: linear-gradient(180deg, rgba(226,231,225,1) 0%, rgba(91,91,91,1) 100%);
+}
+p {
+    font-size: 32px;
 }
