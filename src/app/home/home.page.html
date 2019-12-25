@@ -3,14 +3,14 @@
     <div class="con">
       <div class="animated zoomInLeft delay-2s">
         <div *ngIf="screenOrientation.type.indexOf('portrait') && !flat">
-          <p>{{x}}&#176;</p>
+          <p>Y:{{y}}&#176;</p>
         </div>
         <div *ngIf="screenOrientation.type.indexOf('landscape') && !flat">
-          <p>{{y}}&#176;</p>
+          <p>X:{{x}}&#176;</p>
         </div>
         <div *ngIf="flat">
-          <p>X: {{x}}&#176;</p>
-          <p>Y: {{y}}&#176;</p>
+          <p>Z: {{z}}&#176;</p>
+          <p>ZX: {{zx}}&#176;</p>
         </div>
       </div>
       <div [ngClass]="{'container':true, 'container-circle':flat}" class="animated fadeInDownBig slow">
