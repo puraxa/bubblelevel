@@ -2,19 +2,19 @@
   <div class="ion-padding">
     <div class="con">
       <div class="animated zoomInLeft delay-2s">
-        <div *ngIf="screenOrientation.type.indexOf('portrait') && !flat">
-          <p>Y:{{y}}&#176;</p>
+        <div *ngIf="angles.orientation.type.indexOf('portrait') && !angles.flat">
+          <p>Y:{{angles.y}}&#176;</p>
         </div>
-        <div *ngIf="screenOrientation.type.indexOf('landscape') && !flat">
-          <p>X:{{x}}&#176;</p>
+        <div *ngIf="angles.orientation.type.indexOf('landscape') && !angles.flat">
+          <p>X:{{angles.x}}&#176;</p>
         </div>
-        <div *ngIf="flat">
-          <p>Z: {{z}}&#176;</p>
-          <p>ZX: {{zx}}&#176;</p>
+        <div *ngIf="angles.flat">
+          <p>Z: {{angles.z}}&#176;</p>
+          <p>ZX: {{angles.xz}}&#176;</p>
         </div>
       </div>
-      <div [ngClass]="{'container':true, 'container-circle':flat}" class="animated fadeInDownBig slow">
-        <div [ngClass]="{'bubble-container': true, 'bubble-container-circle': flat}">
+      <div [ngClass]="{'container':true, 'container-circle':angles.flat}" class="animated fadeInDownBig slow">
+        <div [ngClass]="{'bubble-container': true, 'bubble-container-circle': angles.flat}">
           <div class="bubble" appBubbleLevel>
             <div class="bubble-cover"></div>
           </div>
