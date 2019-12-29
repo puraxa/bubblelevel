@@ -9,7 +9,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 })
 export class AnglesService {
   constructor(
-    private motion: DeviceMotion,
+    public motion: DeviceMotion,
     private platform: Platform,
     private orientation: ScreenOrientation
   ) {
@@ -20,6 +20,7 @@ export class AnglesService {
         this.z = Math.abs(this.calculateAngle(accel.z, accel.y) - 90);
         this.xz = this.calculateAngle(accel.x, accel.z);
         this.flat = this.checkIfFlat(this.z, orientation.type);
+        this.ori = this.checkOrientation(orientation);
       })
     });
 }
@@ -28,10 +29,20 @@ export class AnglesService {
   z:number = 0;
   xz:number = 0;
   flat:boolean;
+  ori:string = 'x';
   calculateAngle = (x:number, y:number):number => {
     return Math.abs(Math.round(Math.atan2(x,y)*57.3));
   }
   checkIfFlat = (angle:number,orientation:string):boolean => {
     return angle < 50 && orientation.indexOf('landscape') ? true : false;
+  }
+  checkOrientation = (ori: ScreenOrientation):string => {
+    if(ori.type.indexOf('portrait')){
+      return 'y';
+    }
+    if(ori.type.indexOf('landscape')){
+      return 'x';
+    }
+    return 'z';
   }
 }

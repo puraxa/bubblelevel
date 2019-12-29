@@ -58,4 +58,11 @@ ion-content {
 }
 p {
     font-size: 32px;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+.nesto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }

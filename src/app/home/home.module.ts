@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
 import { BubbleLevelDirective } from './bubble-level.directive';
+import { PhoneanimDirective } from './phoneanim.directive';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { BubbleLevelDirective } from './bubble-level.directive';
       }
     ])
   ],
-  declarations: [HomePage, BubbleLevelDirective]
+  declarations: [HomePage, BubbleLevelDirective, PhoneanimDirective]
 })
 export class HomePageModule {}
