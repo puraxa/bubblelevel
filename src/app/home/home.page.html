@@ -4,17 +4,21 @@
       <div class="animated zoomInLeft delay-2s">
         <div *ngIf="angles.ori == 'y' && !angles.flat" class="nesto">
           <div style="transform: rotate(90deg);">
-            <img src="../../assets/kisspng-samsung-galaxy-j5-2016-smartphone-iphone-6s-model-render-samsung-s6eage-5a7daf3a138956.7066546315181862980801.png" alt="" style="height: 150px; transition: all 0.3s;" appPhoneanim>
+            <img src="../../assets/kisspng-samsung-galaxy-j5-2016-smartphone-iphone-6s-model-render-samsung-s6eage-5a7daf3a138956.7066546315181862980801.png" alt="" style="width: 100px; transition: all 0.3s;" appPhoneanim>
           </div>
-          <p>Y:{{angles.y}}&#176;</p>
+          <p *ngIf="angles.orientation.type == 'landscape-primary'">Y:{{angles.y}}&#176;</p>
+          <p *ngIf="angles.orientation.type == 'landscape-secondary'">Y: {{(angles.y > 0 ? angles.y - 180 : angles.y + 180)}}</p>
         </div>
         <div *ngIf="angles.ori == 'x' && !angles.flat" class="nesto">
-          <img src="../../assets/kisspng-samsung-galaxy-j5-2016-smartphone-iphone-6s-model-render-samsung-s6eage-5a7daf3a138956.7066546315181862980801.png" alt="" style="height: 150px; transition: all 0.3s;" appPhoneanim>
-          <p>X:{{angles.x}}&#176;</p>
+          <div style="position: relative; overflow-y: hidden;">
+            <img src="../../assets/kisspng-samsung-galaxy-j5-2016-smartphone-iphone-6s-model-render-samsung-s6eage-5a7daf3a138956.7066546315181862980801.png" alt="" style="width: 50px; transition: all 0.3s; z-index: 999; position: relative;" appPhoneanim>
+            <div style="width:50px; height: 50px; border: 1px solid black; border-radius: 50%; position: absolute; transform: translateY(-50%);"></div>
+          </div>
+          <p>X:{{angles.x | absolute}}&#176;</p>
         </div>
         <div *ngIf="angles.flat">
-          <p>Z: {{angles.z}}&#176;</p>
-          <p>ZX: {{angles.xz}}&#176;</p>
+          <p>Z: {{(angles.z-90) | absolute}}&#176;</p>
+          <p>ZX: {{angles.xz | absolute}}&#176;</p>
         </div>
       </div>
       <div [ngClass]="{'container':true, 'container-circle':angles.flat}" class="animated fadeInDownBig slow">

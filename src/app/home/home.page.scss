@@ -2,7 +2,7 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-rows: 40vh 60vh;
+    grid-template-rows: 40vh 50vh;
 }
 .container {
     width: 90%;
@@ -64,5 +64,4 @@ p {
 }
 .nesto {
     display: grid;
-    grid-template-columns: 1fr 1fr;
 }
